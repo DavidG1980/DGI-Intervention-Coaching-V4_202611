@@ -1,0 +1,8 @@
+{
+  "name": "DGI Intervention Coaching",
+  "description": "Premium life and business coaching for high-achievers. Transform your life and unlock your potential with DGI Intervention Coaching.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
