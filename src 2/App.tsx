@@ -62,9 +62,9 @@ interface BlogPost {
 // --- Data ---
 
 const navItems: NavItem[] = [
-  { label: 'The Method', href: '#method' },
-  { label: 'Offerings', href: '#offerings' },
-  { label: 'Transformation', href: '#transformation' },
+  { label: 'Approach', href: '#method' },
+  { label: 'You', href: '#offerings' },
+  { label: 'Results', href: '#transformation' },
   { label: 'Packages', href: '#packages' },
   { label: 'About', href: '#about' },
   { label: 'Testimonials', href: '#testimonials' },
@@ -231,7 +231,7 @@ const Navbar = () => {
         <div className="w-5 h-5 rounded-full border border-black flex items-center justify-center text-black shrink-0 animate-pulse">
           <Globe size={11} className="fill-transparent stroke-[2.5]" />
         </div>
-        <span>Global Availability (EN/FR/ES) — Elite Executive Coaching in English, French & Spanish</span>
+        <span>Global Availability — Elite Executive Coaching in English, French & Spanish</span>
       </div>
 
       <nav className={`w-full transition-all duration-300 ${scrolled ? 'bg-brand-black/90 backdrop-blur-md py-4' : 'bg-transparent py-6'}`}>
@@ -256,28 +256,28 @@ const Navbar = () => {
           </a>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-10">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8">
             {navItems.map((item, index) => (
               <a 
                 key={item.href} 
                 href={item.href} 
-                className={`text-white/70 hover:text-brand-gold text-sm font-medium uppercase tracking-widest transition-colors ${index === 0 ? 'ml-6' : ''}`}
+                className={`text-white/70 hover:text-brand-gold text-xs xl:text-sm font-medium uppercase tracking-widest transition-colors ${index === 0 ? 'ml-2 xl:ml-4' : ''}`}
               >
                 {item.label}
               </a>
             ))}
             <a 
-              href="https://calendly.com/admin-dgicoaching/45min" 
+              href="https://calendly.com/admin-dgicoaching/30min" 
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-brand-gold text-black px-6 py-2.5 font-bold uppercase tracking-tighter hover:bg-white transition-colors ml-4"
+              className="bg-brand-gold text-black px-4 xl:px-6 py-2.5 font-bold uppercase tracking-wider hover:bg-white transition-colors ml-2 xl:ml-4 text-[11px] xl:text-xs shrink-0 whitespace-nowrap shadow-gold-glow"
             >
-              Free Discovery Call
+              Schedule Your Free Clarity Session now
             </a>
           </div>
 
           {/* Mobile Toggle */}
-          <button className="md:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
+          <button className="lg:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -289,7 +289,7 @@ const Navbar = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="absolute top-full left-0 w-full bg-brand-black border-t border-white/10 p-6 flex flex-col gap-6 md:hidden shadow-2xl"
+              className="absolute top-full left-0 w-full bg-brand-black border-t border-white/10 p-6 flex flex-col gap-6 lg:hidden shadow-2xl"
             >
               {navItems.map((item) => (
                 <a 
@@ -302,13 +302,13 @@ const Navbar = () => {
                 </a>
               ))}
               <a 
-                href="https://calendly.com/admin-dgicoaching/45min" 
+                href="https://calendly.com/admin-dgicoaching/30min" 
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
-                className="bg-brand-gold text-black py-4 text-center font-bold uppercase tracking-widest text-lg"
+                className="bg-brand-gold text-black py-4 px-6 text-center font-bold uppercase tracking-wider text-base sm:text-lg"
               >
-                Free Discovery Call
+                Schedule Your Free Clarity Session now
               </a>
             </motion.div>
           )}
@@ -343,30 +343,13 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-6xl md:text-[5.5rem] font-display font-black text-white mb-6 leading-[0.9] tracking-tighter">
-              TRANSFORM<br/> 
-              <span className="text-brand-gold">YOUR LIFE.</span>
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-display font-black text-white mb-6 leading-[0.95] tracking-tight uppercase">
+              Your Next Level<br/> 
+              <span className="text-brand-gold">of Growth and Fulfilment</span>
             </h1>
-            <p className="font-serif italic text-2xl md:text-3xl text-white/80 mb-10 max-w-2xl leading-relaxed">
-              Unlock your hidden potential with PIC (Precision Intervention Coaching).{' '}
-              <span className="inline-block whitespace-nowrap">Stop dreaming. Start doing.</span>
+            <p className="font-serif italic text-2xl md:text-3xl text-white/80 max-w-2xl leading-relaxed">
+              Precision Intervention Coaching helps ambitious individuals overcome internal barriers, gain clarity and create rapid, lasting changes.
             </p>
-            <div className="flex flex-col sm:flex-row items-center gap-6">
-              <a 
-                href="https://calendly.com/admin-dgicoaching/45min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-brand-gold text-black px-10 py-5 text-lg font-black uppercase tracking-widest hover:scale-105 hover:bg-white transition-all w-full sm:w-auto shadow-gold-glow rounded-sm"
-              >
-                Free Discovery Call
-              </a>
-              <a 
-                href="#packages" 
-                className="group flex items-center gap-3 text-white font-bold uppercase tracking-widest hover:text-brand-gold transition-colors"
-              >
-                View Packages <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
-              </a>
-            </div>
           </motion.div>
 
           <motion.div
@@ -393,10 +376,10 @@ const Hero = () => {
 
 const FlyerSection = () => {
   const challenges = [
-    "Recently promoted and feeling the pressure of higher expectations?",
-    "Successful... but something feels off in your career",
-    "Struggling with motivation or direction",
-    "Going through life transition"
+    "Recently promoted and adjusting to new expectations",
+    "Successful on paper, but feeling disconnected or unfulfilled",
+    "Lacking clarity, motivation or direction",
+    "Facing an important life or career transition"
   ];
 
   return (
@@ -408,25 +391,31 @@ const FlyerSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-6xl md:text-7xl font-display font-black leading-none mb-6">
-              FEEL THE ENERGY <br/> INSIDE
+            <span className="text-xs uppercase tracking-[0.3em] text-brand-gold font-bold mb-3 block">
+              APPROACH
+            </span>
+            <h2 className="text-5xl sm:text-6xl md:text-7xl font-display font-black leading-none mb-6 uppercase">
+              Committing to change
             </h2>
             <p className="text-xl italic font-medium text-black/60 mb-8 border-l-4 border-brand-gold pl-4">
-              "The place where transformation happens."
+              "Let the transformation happen"
             </p>
             <div className="space-y-6">
-              <p className="text-2xl font-bold">Feeling stuck... even though you know you're capable of more?</p>
-              <ul className="space-y-3">
-                {challenges.map((item, i) => (
-                  <li key={i} className="flex gap-3 items-start font-medium text-lg">
-                    <span className="text-brand-gold font-black">•</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <div className="pt-8 flex items-center gap-4 group">
-                <ArrowRight className="text-brand-gold group-hover:scale-125 transition-transform" size={40} />
-                <span className="text-2xl font-black uppercase italic">This is where <span className="text-brand-gold underline">change begins.</span></span>
+              <p className="text-2xl font-bold leading-snug">
+                You don't need more pressure. You need clarity on what's holding you back and a proven path forward.
+              </p>
+              <div className="space-y-4">
+                <p className="text-sm font-bold uppercase tracking-widest text-black/60 pt-2">
+                  You may recognize yourself here:
+                </p>
+                <ul className="space-y-3">
+                  {challenges.map((item, i) => (
+                    <li key={i} className="flex gap-3 items-start font-medium text-lg text-black/85">
+                      <span className="text-brand-gold font-black text-xl leading-none">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </motion.div>
@@ -516,7 +505,7 @@ const Offerings = () => {
 const WhoYouBecomeSection = () => {
   const [qrCodeUrl, setQrCodeUrl] = useState<string>('');
   const [copiedLink, setCopiedLink] = useState(false);
-  const bookingUrl = 'https://calendly.com/admin-dgicoaching/45min';
+  const bookingUrl = 'https://calendly.com/admin-dgicoaching/30min';
 
   useEffect(() => {
     QRCode.toDataURL(bookingUrl, {
@@ -692,7 +681,7 @@ const WhoYouBecomeSection = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 bg-brand-gold text-black font-black uppercase tracking-wider px-8 py-4 text-base hover:bg-white hover:scale-[1.02] active:scale-[0.98] transition-all shadow-[0_4px_20px_rgba(212,175,55,0.3)]"
                 >
-                  Free Discovery Call
+                  Schedule Your Free Clarity Session now
                   <ArrowRight size={18} className="stroke-[2.5]" />
                 </a>
 
@@ -723,7 +712,7 @@ const WhoYouBecomeSection = () => {
                   {qrCodeUrl ? (
                     <img 
                       src={qrCodeUrl} 
-                      alt="Scan to book discovery call with DGI Coaching" 
+                      alt="Scan to schedule your free clarity session with DGI Coaching" 
                       className="w-full h-full object-contain"
                     />
                   ) : (
@@ -741,7 +730,7 @@ const WhoYouBecomeSection = () => {
                     Scan with your phone camera to pick your time directly.
                   </p>
                   <span className="text-[10px] text-white/30 font-mono block pt-1 break-all">
-                    calendly.com/admin-dgicoaching
+                    calendly.com/admin-dgicoaching/30min
                   </span>
                 </div>
               </div>
@@ -1588,7 +1577,7 @@ const ContactFooter = () => {
               type="submit"
               className="block w-full bg-brand-gold text-black py-6 text-center font-black uppercase tracking-[0.2em] text-xl hover:bg-white transition-colors cursor-pointer"
             >
-              Initiate Breakthrough
+              Start Your Journey
             </button>
           </form>
         </div>
